@@ -1,7 +1,8 @@
 import * as React from "react";
-import '@fontsource/bruno-ace-sc';
+
 
 import photo from '../images/scrum.jpg'; // Adjust the path to where you saved the image
+import { graphql } from "gatsby";
 
 
 const styles = {
@@ -70,7 +71,7 @@ const styles = {
   photo: {
     width: '48%', // Approximately half the container width
     height: '200px', // Adjust as needed
-    background: `url(${photo}) no-repeat center center`, // Use the imported image here
+    background:  `url(${photo}) no-repeat center center`, // Use the imported image here
     backgroundSize: 'cover', // This will cover the entire area of the div
     marginLeft: '10px', // Adjusted for right alignment
   },
@@ -111,7 +112,7 @@ const styles = {
     padding: '10px',
     borderLeft: '5px solid #0056b3',
   },
-  
+
 };
 
 // Generate 10 events with skeleton content
@@ -120,62 +121,90 @@ const events = Array.from({ length: 8 }, (_, index) => ({
   title: `Event ${index + 1}`,
 }));
 
-const IndexPage = () => {
-  return (
-    <div style={styles.container}>
-      <h1 style={styles.header1}>We love web overzichtspagina</h1>
+{/* <div style={styles.eventItem}>
+<span style={styles.spanStyle}>
+  {date}
+</span>
+<div style={styles.contentRow}>
+  <div style={styles.textContent}>
+    <h2 style={styles.header2}>{titel}</h2>
+    {text.raw}
+    <img url={image.url} />
+  </div>
+</div>
+</div> */}
 
-      <div style={styles.eventItem}>
-        <span style={styles.spanStyle}>
-          Woensdag 29 november
-        </span>
-        <div style={styles.contentRow}>
-          <div style={styles.textContent}>
-            <h2 style={styles.header2}>Scrum crash course</h2>
-            <span style={styles.naam}>Lars van Funda</span>
-            <p style={styles.paragraph}>
-              Lars gaf vandaag een talk in les van de eerstejaars over hoe ze bij Funda de sprint review aan pakken en welke scrum fundamentals zij hiervoor gebruiken.
-            </p>
-          </div>
-          <div style={styles.photo}></div>
-        </div>
-        <h4>Hun belangrijke fundamentals:</h4>
-        <ul style={styles.list}>
-          <li style={styles.listItem}>Sprint reviews</li>
-          <li style={styles.listItem}>Sprint retrospective</li>
-          <li style={styles.listItem}>Backlog refilement </li>
-          <li style={styles.listItem}>Daily scrum</li>
-          <li style={styles.listItem}>Sprint planning</li>
-          <li style={styles.listItem}>Backlog refinement</li>
-        </ul>
-        <h4>Waar bestaat hun scrum team allemaal uit?</h4>
-        <ul style={styles.list}>
-          <li style={styles.listItem}>Developers</li>
-          <li style={styles.listItem}>Scrum master</li>
-          <li style={styles.listItem}>Product owner   </li>
-        </ul>
-      </div>
+export default function IndexPage({ data }) {
 
-      {events.map(event => (
-        <div key={event.id} style={styles.eventItem}>
+  console.log(data)
+  const { titel, text, date, image } = data.contentfulPost
+
+    return (
+      <div style={styles.container}>
+        <h1 style={styles.header1}>We love web overzichtspagina</h1>
+  
+        <div style={styles.eventItem}>
           <span style={styles.spanStyle}>
-            Date
+          {date}
           </span>
           <div style={styles.contentRow}>
             <div style={styles.textContent}>
-              <h2 style={styles.header2}>{event.title}</h2>
-              <p style={styles.skeletonName}></p>
-              <p style={styles.skeletonParagraph}>
+              <h2 style={styles.header2}>{titel}</h2>
+              <span style={styles.naam}>Lars van Funda</span>
+              <p style={styles.paragraph}>
+                Lars gaf vandaag een talk in les van de eerstejaars over hoe ze bij Funda de sprint review aan pakken en welke scrum fundamentals zij hiervoor gebruiken.
               </p>
             </div>
-            <div style={styles.skeleton}></div>
+            <div style={styles.photo}></div>
           </div>
+          <h4>Hun belangrijke fundamentals:</h4>
+          <ul style={styles.list}>
+            <li style={styles.listItem}>Sprint reviews</li>
+            <li style={styles.listItem}>Sprint retrospective</li>
+            <li style={styles.listItem}>Backlog refilement </li>
+            <li style={styles.listItem}>Daily scrum</li>
+            <li style={styles.listItem}>Sprint planning</li>
+            <li style={styles.listItem}>Backlog refinement</li>
+          </ul>
+          <h4>Waar bestaat hun scrum team allemaal uit?</h4>
+          <ul style={styles.list}>
+            <li style={styles.listItem}>Developers</li>
+            <li style={styles.listItem}>Scrum master</li>
+            <li style={styles.listItem}>Product owner   </li>
+          </ul>
         </div>
-      ))}
-    </div>
-  );
-};
+  
+        {events.map(event => (
+          <div key={event.id} style={styles.eventItem}>
+            <span style={styles.spanStyle}>
+              Date
+            </span>
+            <div style={styles.contentRow}>
+              <div style={styles.textContent}>
+                <h2 style={styles.header2}>{event.title}</h2>
+                <p style={styles.skeletonName}></p>
+                <p style={styles.skeletonParagraph}>
+                </p>
+              </div>
+              <div style={styles.skeleton}></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
-export default IndexPage;
-
-export const Head = () => <title>Events Overview</title>
+export const query = graphql`
+query MyQuery {
+  contentfulPost {
+    titel
+    image {
+      url
+    }
+    text {
+      raw
+    }
+    date
+  }
+}
+`
