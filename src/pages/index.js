@@ -40,14 +40,14 @@ const styles = {
     justifyContent: 'space-between',
   },
   photo: {
-    width: '48%', // Approximately half the container width
-    height: '200px', // Adjust as needed
-    backgroundColor: '#e0e0e0', // Gray color for the skeleton photo
-    marginLeft: '10px', // Adjusted for right alignment
+    width: '48%', 
+    height: '200px', 
+    backgroundColor: '#e0e0e0',
+    marginLeft: '10px', 
   },
   skeleton: {
-    width: '48%', // Approximately half the container width
-    height: '200px', // Adjust as needed
+    width: '48%', 
+    height: '200px', 
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -55,7 +55,7 @@ const styles = {
     animation: '1.5s shine linear infinite',
   },
   textContent: {
-    width: '48%', // Approximately half the container width
+    width: '48%', 
   },
   spanStyle: {
     display: 'block',
@@ -68,15 +68,15 @@ const styles = {
     color: '#666',
   },
   photo: {
-    width: '48%', // Approximately half the container width
-    height: '200px', // Adjust as needed
-    background:  `url(${photo}) no-repeat center center`, // Use the imported image here
-    backgroundSize: 'cover', // This will cover the entire area of the div
-    marginLeft: '10px', // Adjusted for right alignment
+    width: '48%', 
+    height: '200px', 
+    background:  `url(${photo}) no-repeat center center`,
+    backgroundSize: 'cover', 
+    marginLeft: '10px', 
   },
   skeletonDate: {
     height: '30px',
-    width: '19%', // Approximately half the container width
+    width: '19%', 
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -85,7 +85,7 @@ const styles = {
   },
   skeletonName: {
     height: '30px',
-    width: '42%', // Approximately half the container width
+    width: '42%', 
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -94,7 +94,7 @@ const styles = {
   },
   skeletonParagraph: {
     height: '30px',
-    width: '66%', // Approximately half the container width
+    width: '66%', 
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -141,7 +141,7 @@ export default function IndexPage({ data }) {
     return (
       <div style={styles.container}>
         <h1 style={styles.header1}>We love web overzichtspagina</h1>
-  
+        
         <div style={styles.eventItem}>
           <span style={styles.spanStyle}>
           {date}
