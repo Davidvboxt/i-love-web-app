@@ -1,9 +1,8 @@
 import * as React from "react";
 
-
+import './my-styles.css'; 
 import photo from '../images/scrum.jpg'; // Adjust the path to where you saved the image
 import { graphql } from "gatsby";
-
 
 const styles = {
   container: {
@@ -107,7 +106,7 @@ const styles = {
     padding: 0,
   },
   listItem: {
-    backgroundColor: '#f9f9f9',
+
     margin: '5px 0',
     padding: '10px',
     borderLeft: '5px solid #0056b3',
@@ -149,7 +148,7 @@ export default function IndexPage({ data }) {
           </span>
           <div style={styles.contentRow}>
             <div style={styles.textContent}>
-              <h2 style={styles.header2}>{titel}</h2>
+              <h2 className="animation" style={styles.header2}>{titel}</h2>
               <span style={styles.naam}>Lars van Funda</span>
               <p style={styles.paragraph}>
                 Lars gaf vandaag een talk in les van de eerstejaars over hoe ze bij Funda de sprint review aan pakken en welke scrum fundamentals zij hiervoor gebruiken.
@@ -158,7 +157,7 @@ export default function IndexPage({ data }) {
             <div style={styles.photo}></div>
           </div>
           <h4>Hun belangrijke fundamentals:</h4>
-          <ul style={styles.list}>
+          <ul className="li custom-scrollbar" style={styles.list}>
             <li style={styles.listItem}>Sprint reviews</li>
             <li style={styles.listItem}>Sprint retrospective</li>
             <li style={styles.listItem}>Backlog refilement </li>

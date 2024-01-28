@@ -94,7 +94,7 @@ const styles = {
     // Approximately half the container width
     height: '200px',
     // Adjust as needed
-    background: `url({image.file.url}) no-repeat center center`,
+    background: `url(${_images_scrum_jpg__WEBPACK_IMPORTED_MODULE_1__["default"]}) no-repeat center center`,
     // Use the imported image here
     backgroundSize: 'cover',
     // This will cover the entire area of the div
