@@ -1,4 +1,3 @@
-"use strict";
 exports.id = "component---src-pages-index-js";
 exports.ids = ["component---src-pages-index-js"];
 exports.modules = {
@@ -9,13 +8,17 @@ exports.modules = {
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ IndexPage)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _images_scrum_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/scrum.jpg */ "./src/images/scrum.jpg");
+/* harmony import */ var _my_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./my-styles.css */ "./src/pages/my-styles.css");
+/* harmony import */ var _my_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_my_styles_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_scrum_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/scrum.jpg */ "./src/images/scrum.jpg");
+
 
  // Adjust the path to where you saved the image
 
@@ -56,19 +59,13 @@ const styles = {
   },
   photo: {
     width: '48%',
-    // Approximately half the container width
     height: '200px',
-    // Adjust as needed
     backgroundColor: '#e0e0e0',
-    // Gray color for the skeleton photo
-    marginLeft: '10px' // Adjusted for right alignment
+    marginLeft: '10px'
   },
-
   skeleton: {
     width: '48%',
-    // Approximately half the container width
     height: '200px',
-    // Adjust as needed
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -76,9 +73,8 @@ const styles = {
     animation: '1.5s shine linear infinite'
   },
   textContent: {
-    width: '48%' // Approximately half the container width
+    width: '48%'
   },
-
   spanStyle: {
     display: 'block',
     marginBottom: '10px',
@@ -91,20 +87,14 @@ const styles = {
   },
   photo: {
     width: '48%',
-    // Approximately half the container width
     height: '200px',
-    // Adjust as needed
-    background: `url(${_images_scrum_jpg__WEBPACK_IMPORTED_MODULE_1__["default"]}) no-repeat center center`,
-    // Use the imported image here
+    background: `url(${_images_scrum_jpg__WEBPACK_IMPORTED_MODULE_2__["default"]}) no-repeat center center`,
     backgroundSize: 'cover',
-    // This will cover the entire area of the div
-    marginLeft: '10px' // Adjusted for right alignment
+    marginLeft: '10px'
   },
-
   skeletonDate: {
     height: '30px',
     width: '19%',
-    // Approximately half the container width
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -114,7 +104,6 @@ const styles = {
   skeletonName: {
     height: '30px',
     width: '42%',
-    // Approximately half the container width
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -124,7 +113,6 @@ const styles = {
   skeletonParagraph: {
     height: '30px',
     width: '66%',
-    // Approximately half the container width
     background: '#eee',
     background: 'linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%)',
     borderRadius: '5px',
@@ -136,7 +124,6 @@ const styles = {
     padding: 0
   },
   listItem: {
-    backgroundColor: '#f9f9f9',
     margin: '5px 0',
     padding: '10px',
     borderLeft: '5px solid #0056b3'
@@ -185,6 +172,7 @@ function IndexPage({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     style: styles.textContent
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+    className: "animation",
     style: styles.header2
   }, titel), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     style: styles.naam
@@ -193,6 +181,7 @@ function IndexPage({
   }, "Lars gaf vandaag een talk in les van de eerstejaars over hoe ze bij Funda de sprint review aan pakken en welke scrum fundamentals zij hiervoor gebruiken.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     style: styles.photo
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "Hun belangrijke fundamentals:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    className: "li custom-scrollbar",
     style: styles.list
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
     style: styles.listItem
@@ -238,12 +227,23 @@ const query = "672804204";
 
 /***/ }),
 
+/***/ "./src/pages/my-styles.css":
+/*!*********************************!*\
+  !*** ./src/pages/my-styles.css ***!
+  \*********************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./src/images/scrum.jpg":
 /*!******************************!*\
   !*** ./src/images/scrum.jpg ***!
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
